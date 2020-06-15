@@ -1,0 +1,6 @@
+$collection =  import-excel Desktop:\Book1.xlsx -HeaderName pc
+$Device =foreach ($item in $collection.pc)
+{
+  Get-CMDevice -Name $item | Select-Object -Property Name,Username,ADSiteName 
+}
+$Device | Export-Excel Desktop:\VL.xlsx -Append
