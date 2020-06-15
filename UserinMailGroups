@@ -1,0 +1,10 @@
+ $user_dn = (Get-HABMailbox sicay).distinguishedname
+ foreach ($group in Get-HABDistributionGroup -resultsize unlimited){
+   if ((Get-HABDistributionGroupMember $group.identity | select -expand distinguishedname) -contains $user_dn){$group.name}
+ }
+ 
+
+  $user_dn = Get-TLEMailbox sicay
+ foreach ($group in Get-TLEDistributionGroup -resultsize unlimited){
+   if ((Get-TLEDistributionGroupMember $group.identity | select -expand distinguishedname) -contains $user_dn){$group.name}
+ }
