@@ -1,0 +1,10 @@
+$ignoreFiles = "\.zip|\.psd"
+#$ignoreFiles = @("*.zip", "*.psd")
+    $query = Get-WmiObject -query "SELECT * FROM Win32_OfflineFilesItem" #-Credential $edp -ComputerName CA1-EC-D01
+    $output = @()
+    $query | ? {
+      $output += [PSCustomObject] @{
+            ItemPath = $_.ItemPath 
+        }
+    } 
+ $output
