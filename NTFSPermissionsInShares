@@ -1,0 +1,12 @@
+$Name = (gci D:\Associates | ? Name -NotMatch 'tmp').Name
+$collection = gci D:\Associates | ? Name -NotMatch 'tmp'
+
+foreach ($item in $collection.FullName)
+{
+   foreach ($User in $Name)
+   {
+     Add-NTFSAccess D:\Associates\$User\favorites -Account $User -AccessRights Modify
+   }
+}
+
+# Remove-Item -Recurse -Force "D:\Associates\$User\favorites\`$RECYCLE.BIN"
