@@ -1,0 +1,3 @@
+Get-WmiObject -Class Win32_OfflineFilesItem  | Select-Object -Property ItemPath
+Get-WmiObject Win32_OfflineFilesItem -filter "itemtype=1" -Credential $edp -ComputerName CA1-EC-D01| ft itempath
+Get-WmiObject -Class win32_OfflineFilesCache -ComputerName ca1-ccr-d12
