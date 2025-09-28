@@ -23,8 +23,9 @@
   <RemoveMSI />
 
   <!-- Silent UI / branding -->
-  <Display Level="None" AcceptEULA="TRUE" />
+  <Display Level="Full" AcceptEULA="TRUE" />
   <AppSettings>
     <Setup Name="Company" Value="Running Creek Casino" />
   </AppSettings>
 </Configuration>
+
