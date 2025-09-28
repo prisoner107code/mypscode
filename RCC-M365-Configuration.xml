@@ -1,0 +1,30 @@
+<Configuration ID="8dc3b38d-e1ea-496a-80da-0cbbdd9ec74a">
+  <Add OfficeClientEdition="64" Channel="Current" AllowCdnFallback="TRUE">
+    <Product ID="O365ProPlusRetail">
+      <Language ID="en-us" />
+      <ExcludeApp ID="Access" />
+      <ExcludeApp ID="Groove" />
+      <ExcludeApp ID="Lync" />
+      <ExcludeApp ID="Publisher" />
+      <!-- Optional: Exclude Teams if you deploy it separately -->
+      <!-- <ExcludeApp ID="Teams" /> -->
+    </Product>
+  </Add>
+
+  <!-- Single-user devices -->
+  <Property Name="SharedComputerLicensing" Value="0" />
+  <Property Name="AUTOACTIVATE" Value="1" />
+  <Property Name="FORCEAPPSHUTDOWN" Value="TRUE" />
+
+  <!-- Updates -->
+  <Updates Enabled="TRUE" Channel="Current" />
+
+  <!-- Remove old MSI Office -->
+  <RemoveMSI />
+
+  <!-- Silent UI / branding -->
+  <Display Level="None" AcceptEULA="TRUE" />
+  <AppSettings>
+    <Setup Name="Company" Value="Running Creek Casino" />
+  </AppSettings>
+</Configuration>
